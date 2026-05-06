@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #0a0510;
+  --color-brand-cyan: #00f3ff;
+  --color-brand-magenta: #ff00ff;
+  --color-brand-purple: #7000ff;
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: white;
+  margin: 0;
+  height: 100%;
+}
