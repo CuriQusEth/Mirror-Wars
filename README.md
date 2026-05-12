@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Mirror Wars
 
-# Run and deploy your AI Studio app
+Mirror Wars is a strategic, mind-bending mirror warfare game with Web3 integration on Base Mainnet.
 
-This contains everything you need to run your app locally.
+## Game Concept
+You are a Mirror Lord who commands armies in a symmetrical mirror realm. Every unit you deploy has a perfect reflection on the other side of the mirror. You must outsmart your opponent by mastering symmetry, reflection tactics, and dimensional warfare.
 
-View your app in AI Studio: https://ai.studio/apps/f117d6c1-b928-4fd7-b522-6e2862ee56a9
+## Core Mechanics
+- **Symmetrical Deployment**: Deploying a unit spawns its exact reflection in the opponent's territory.
+- **Abilities**: Change the tide of battle with Swap and Shatter.
+- **On-chain Integration**: Built on Base, records high scores via ERC-8021 and ERC-8004 standards.
 
-## Run Locally
+## Tech Stack
+- Frontend: React / Vite / Canvas
+- Styling: Tailwind CSS & Framer Motion
+- Web3: Wagmi, Viem, SIWE
+- Backend: Express API handling MCP integration & Agent Card endpoints
 
-**Prerequisites:**  Node.js
+## Local Development
 
+```bash
+# Install dependencies
+npm install
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+npm start
+```
