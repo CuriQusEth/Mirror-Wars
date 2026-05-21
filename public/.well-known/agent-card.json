@@ -27,6 +27,38 @@
       "description": "Main agent control API"
     }
   ],
+  "skills": [
+    {
+      "id": "mirror-battles",
+      "name": "Mirror Battles",
+      "description": "Executes symmetrical mirror battles."
+    },
+    {
+      "id": "competitive-mechanics",
+      "name": "Competitive Mechanics",
+      "description": "Orchestrates competitive game mechanics."
+    },
+    {
+      "id": "multi-arena-management",
+      "name": "Multi Arena Management",
+      "description": "Manages multiple arenas simultaneously."
+    },
+    {
+      "id": "strategic-automation",
+      "name": "Strategic Automation",
+      "description": "Handles strategic automation of gameplay."
+    },
+    {
+      "id": "real-time-orchestration",
+      "name": "Real-time Orchestration",
+      "description": "Provides real-time game orchestration."
+    },
+    {
+      "id": "mcp-command-execution",
+      "name": "MCP Command Execution",
+      "description": "Executes MCP tool commands."
+    }
+  ],
   "capabilities": [
     "mirror-battles",
     "competitive-mechanics",
