@@ -56,10 +56,6 @@ export function TitleScreen() {
           <div className="w-full sm:w-80 text-white/40 text-center opacity-50 text-[10px] tracking-widest uppercase" >
              Daily Mirror Challenge (Locked)
           </div>
-          
-          <div className="mt-8">
-            <SayGMButton />
-          </div>
         </div>
       </div>
     </div>
