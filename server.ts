@@ -88,6 +88,8 @@ async function startServer() {
       name: "Mirror Wars Orchestrator",
       status: "active",
       wallet: "0x29536D0bc1004ab274c4F0F59734Ad74D4559b7B",
+      network: "Base Denim Mainnet (eip155:8453)",
+      blockTime: "200ms",
       platform: "Mirror Wars",
       version: "1.0.0"
     });

@@ -24,9 +24,9 @@ export function BattleScreen() {
           </div>
           <div className="hidden sm:block">
             <h1 className="text-xl sm:text-2xl font-black tracking-tighter uppercase italic">Mirror Wars</h1>
-            <div className="flex items-center gap-2 text-[10px] text-[#00f3ff] font-mono tracking-widest uppercase">
-              <span className="w-2 h-2 bg-[#00f3ff] rounded-full animate-pulse"></span>
-              Base Mainnet Connected
+            <div className="flex items-center gap-2 text-[10px] text-emerald-400 font-mono tracking-widest uppercase">
+              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+              Base Denim Mainnet (200ms)
             </div>
           </div>
         </div>

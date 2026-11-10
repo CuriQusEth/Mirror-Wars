@@ -1,6 +1,6 @@
 import { useGameStore } from "@/store/gameStore";
 import { Button } from "@/components/ui/Button";
-import { useSendTransaction, useAccount } from "wagmi";
+import { useSendTransaction, useAccount, useWaitForTransactionReceipt } from "wagmi";
 import { generateOnchainTransactionProps } from "@/lib/erc8021";
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -15,6 +15,10 @@ export function GameOverScreen() {
   const [txHash, setTxHash] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({
+    hash: (txHash as `0x${string}`) || undefined,
+  });
+
   const isVictory = baseHp > 0;
 
   const handleRecordOnchain = async () => {
@@ -22,11 +26,11 @@ export function GameOverScreen() {
     setIsSubmitting(true);
     try {
       const txProps = generateOnchainTransactionProps("RECORD_SCORE", { score, victory: isVictory });
-      // Self tx with 0 value to record the score via transaction data payload (placeholder)
+      // Self tx with 0 value to record the score via transaction data payload
       const hash = await sendTransactionAsync({
         to: address,
         value: 0n,
-        data: "0x" + Buffer.from(JSON.stringify(txProps)).toString("hex") as `0x${string}`,
+        data: ("0x" + Buffer.from(JSON.stringify(txProps)).toString("hex")) as `0x${string}`,
       });
       setTxHash(hash);
     } catch (e) {
@@ -57,9 +61,25 @@ export function GameOverScreen() {
         </p>
 
         {txHash ? (
-          <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 text-center mb-6 w-full backdrop-blur-md">
-            <p className="text-green-400 font-bold mb-1">Score Recorded On-Chain!</p>
-            <p className="text-[10px] font-mono text-green-300 break-all">{txHash}</p>
+          <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-center mb-6 w-full backdrop-blur-md">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <span className={`w-2 h-2 rounded-full ${isConfirmed ? 'bg-emerald-400' : 'bg-amber-400 animate-ping'}`}></span>
+              <p className="text-emerald-400 font-bold text-sm">
+                {isConfirmed 
+                  ? "Confirmed on Base Denim Mainnet (200ms Block)!" 
+                  : isConfirming 
+                    ? "Inscribing on Base Denim (200ms blocks)..." 
+                    : "Transaction Broadcast"}
+              </p>
+            </div>
+            <a 
+              href={`https://basescan.org/tx/${txHash}`} 
+              target="_blank" 
+              rel="noreferrer"
+              className="text-[10px] font-mono text-emerald-300 hover:text-emerald-200 underline break-all block"
+            >
+              {txHash}
+            </a>
           </div>
         ) : (
           <Button 
@@ -69,7 +89,7 @@ export function GameOverScreen() {
             onClick={handleRecordOnchain}
             disabled={!address || isSubmitting}
           >
-            {isSubmitting ? "Recording..." : "Record This Mirror War On-Chain"}
+            {isSubmitting ? "Broadcasting..." : "Record On Base Denim Mainnet"}
             <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
           </Button>
         )}

@@ -32,6 +32,10 @@ export function TitleScreen() {
           <p className="text-[#00f3ff] mt-2 font-mono text-[10px] tracking-widest uppercase">
             Symmetrical Cyber-Fantasy
           </p>
+          <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[10px] tracking-widest uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Base Denim Mainnet • 200ms Blocks
+          </div>
         </motion.div>
 
         <div className="w-full space-y-4 flex flex-col items-center">

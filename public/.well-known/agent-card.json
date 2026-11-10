@@ -68,6 +68,8 @@
     "mcp-command-execution"
   ],
   "supportedChains": ["eip155:8453"],
+  "network": "Base Denim Mainnet (eip155:8453)",
+  "blockTime": "200ms",
   "active": true,
   "status": "online"
 }

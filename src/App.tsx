@@ -23,7 +23,11 @@ function GMButton() {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+      <div className="px-3 py-1.5 rounded-lg bg-black/60 border border-emerald-500/30 text-emerald-400 backdrop-blur-md flex items-center gap-2 font-mono text-[10px] tracking-wider uppercase shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Base Denim (200ms)</span>
+      </div>
       <button
         onClick={sendGMTransaction}
         className="px-3 py-2 rounded-lg bg-[#E8A020]/20 hover:bg-[#E8A020]/30 border border-[#E8A020]/40 text-[#E8A020] transition-colors flex items-center gap-2 font-['Cinzel'] text-xs font-bold"

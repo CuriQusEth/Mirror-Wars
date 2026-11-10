@@ -24,6 +24,7 @@ export function Web3Login() {
         <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-md text-[#00f3ff] text-xs font-mono font-bold tracking-widest uppercase flex items-center gap-2">
           <span className="w-2 h-2 bg-[#00f3ff] rounded-full animate-pulse"></span>
           {address?.slice(0, 6)}...{address?.slice(-4)}
+          <span className="ml-1 text-[9px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">Denim 200ms</span>
         </div>
         <Button variant="ghost" size="sm" onClick={() => disconnect()}>
           Disconnect
